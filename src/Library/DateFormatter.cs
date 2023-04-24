@@ -15,6 +15,23 @@ public class DateFormatter
     /// <returns>La fecha convertida al formato "yyyy-mm-dd".</returns>
     public static string ChangeFormat(string date)
     {
+        string forbidden = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        
+        foreach (char alfa in forbidden)
+        {
+            if (date.Contains(alfa))
+            {
+                return "";
+            }
+        }
+        
+        if (date.Length != 10)
+        {
+            return "";
+        }
+        else
+        {
         return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+        }
     }
 }
