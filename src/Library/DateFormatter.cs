@@ -29,6 +29,14 @@ public class DateFormatter
         {
             return "";
         }
+
+        int firstSlash = date.IndexOf('/');
+        int secondSlash = date.IndexOf('/', firstSlash + 1);    
+
+        if (!(firstSlash == 2 && secondSlash == 5))
+        {
+            return "";
+        }
         else
         {
         return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);

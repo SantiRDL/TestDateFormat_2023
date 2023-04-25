@@ -71,4 +71,16 @@ public class DateFormattersTests
 
         Assert.That(actual, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void TestIncorrectOrder()
+    {
+        
+        string input = "2/4564/677";
+        string expected = "";
+        
+        string actual = DateFormatter.ChangeFormat(input);
+
+        Assert.That(actual, Is.EqualTo(expected));
+    }
 }
