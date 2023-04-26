@@ -83,4 +83,16 @@ public class DateFormattersTests
 
         Assert.That(actual, Is.EqualTo(expected));
     }
+
+    [Test]
+    public void TestNotSlashes()
+    {
+        
+        string input = "21-04-2001";
+        string expected = "";
+        
+        string actual = DateFormatter.ChangeFormat(input);
+
+        Assert.That(actual, Is.EqualTo(expected));
+    }
 }
